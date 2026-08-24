@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>โปรแกรมแปลงค่าสกุลเงิน</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>💱 โปรแกรมแปลงค่าสกุลเงิน</h1>
+
+    <div class="converter-box">
+
+      <!-- ช่องต้นทาง -->
+      <div class="field-group">
+        <label for="currency-one">จาก</label>
+        <select id="currency-one">
+          <option value="THB">THB - บาทไทย</option>
+          <option value="USD">USD - ดอลลาร์สหรัฐ</option>
+          <option value="EUR">EUR - ยูโร</option>
+          <option value="JPY">JPY - เยนญี่ปุ่น</option>
+          <option value="GBP">GBP - ปอนด์อังกฤษ</option>
+        </select>
+        <input type="number" id="amount-one" placeholder="0.00" />
+      </div>
+
+      <!-- ปุ่มสลับทิศทาง -->
+      <button id="swap-btn" title="สลับสกุลเงิน">⇅</button>
+
+      <!-- ช่องปลายทาง -->
+      <div class="field-group">
+        <label for="currency-two">เป็น</label>
+        <select id="currency-two">
+          <option value="THB">THB - บาทไทย</option>
+          <option value="USD" selected>USD - ดอลลาร์สหรัฐ</option>
+          <option value="EUR">EUR - ยูโร</option>
+          <option value="JPY">JPY - เยนญี่ปุ่น</option>
+          <option value="GBP">GBP - ปอนด์อังกฤษ</option>
+        </select>
+        <input type="number" id="amount-two" placeholder="0.00" />
+      </div>
+
+      <p id="rate-text" class="rate-text">อัตราแลกเปลี่ยน: -</p>
+      <p id="updated-text" class="updated-text">อัปเดตล่าสุด: -</p>
+
+      <button id="clear-btn" class="clear-btn">ล้างข้อมูล</button>
+    </div>
+
+    <!-- ประวัติการแปลงเงิน -->
+    <div class="history-box">
+      <div class="history-header">
+        <h2>ประวัติการแปลงเงินย้อนหลัง 10 รายการล่าสุด</h2>
+        <button id="clear-history-btn">ล้างประวัติ</button>
+      </div>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
